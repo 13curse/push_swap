@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:04:40 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/17 11:00:08 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/12/17 11:04:24 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	error_many_args(int argc, char **argv)
 	}
 	return (0);
 }
-return (0);
+
 
 int	isdupli_many_args(int argc, char **argv)
 {
