@@ -1,0 +1,7 @@
+ERRORS TO CHECK :
+
+- ARGC = 1 ✔️
+- ARGV[] ISN´T A NUMBER (isdigit)
+- ARGV[] ISN´T AN INT (isint)
+- ARGV[] IS A DUPLICATE (strcmp?)
+- THERE'S MULTIPLES SIGNS (EX : --47)
