@@ -1,10 +1,8 @@
 ERRORS TO CHECK :
 
-- ARGC = 1 ✔️
-- ARGV[] ISN´T A NUMBER (isdigit)
-- ARGV[] ISN´T AN INT (isint)
-- ARGV[] IS A DUPLICATE (strcmp?)
+- ARGC = 1 ✔️ (main.c)
+- ARGV[] ISN´T A NUMBER (isdigit) ✔️
+- ARGV[] ISN´T AN INT (isint) ✔️
+- ARGV[] IS A DUPLICATE (strcmp?) ✔️
 - THERE'S MULTIPLES SIGNS (EX : --47)
 
-⚠️ CHECK HOW TO SPLIT A STRING LIKE "7 4 5 89 74" IN 
-DIFFERENTS ARGUMENTS LIKE ARGV[1] = 7, ARGV[2] = 4, ETC... ⚠️
