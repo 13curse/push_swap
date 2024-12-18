@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:27:38 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/17 10:12:00 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/12/18 13:04:51 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));;
 char	*ft_strndup(const char *s, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-size_t	ft_strlen(const char *str);
+int	ft_strlen(char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_atoi(const char *nptr);
