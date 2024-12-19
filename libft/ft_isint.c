@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:05:12 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/17 10:11:49 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/12/19 13:58:45 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isint(long long i)
 	return (0);
 }
 
-int main() 
+/* int main() 
 {
     long long test_values[] = {INT_MIN, INT_MAX, (long long)INT_MIN - 1, (long long)INT_MAX + 1, 0};
     int num_values = sizeof(test_values) / sizeof(test_values[0]);
@@ -33,4 +33,4 @@ int main()
         }
     }
     return 0;
-}
+} */

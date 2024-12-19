@@ -6,20 +6,18 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:09 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/17 15:18:56 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/12/19 13:44:31 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_strlen(char *s);
-
 static int	is_sep(char c)
 {
-	return (c  == ' ');
+	return (c  == ' ' || c == '	');
 }
 
-static int	count_args(char *str)
+int	count_args(char *str)
 {
 	int	count;
 	int	in_arg;
@@ -55,7 +53,7 @@ static char	*copy_arg(char *str, int start, int end)
 	return (arg);
 }
 
-static char	**free_split(char **split, int count)
+char	**free_split(char **split, int count)
 {
 	while (count > 0)
 		free(split[--count]);
@@ -89,6 +87,7 @@ char	**split_args(char *str)
 			return (free_split(result, i));
 		start = end;
 	}
+	result[i] = NULL;
 	return (result);
 }
 

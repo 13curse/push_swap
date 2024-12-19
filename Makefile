@@ -2,35 +2,27 @@ NAME = push_swap
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
-
-RM = rm -rf
-
-SRCS =
+SRCS = error_handling.c create_list.c split.c utils.c main.c
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+EXEC = push_swap
 
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
+all: $(EXEC)
 
-$(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft
+$(EXEC): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(EXEC)
 
 %.o: %.c
-	$(CC) $(FLAGS) -I$(LIBFT_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(MAKE) -C $(LIBFT_DIR) clean
 	rm -f $(OBJS)
 
 fclean: clean
-	$(MAKE) -C $(LIBFT_DIR) fclean
-	rm -f $(NAME)
+	rm -f $(EXEC)
 
 re: fclean all
 

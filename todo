@@ -3,9 +3,11 @@ ERRORS TO CHECK :
 - ARGC = 1 ✔️ (main.c)
 - ARGV[] ISN´T A NUMBER (isdigit) ✔️
 - ARGV[] ISN´T AN INT (isint) ✔️
-- ARGV[] IS A DUPLICATE (strcmp?) ✔️
-- ARGV[] IS A NEGATIVE NUMBER
+- ARGV[] IS A NEGATIVE NUMBER ✔️
 - THERE'S MULTIPLES SIGNS (EX : --47)
+(actually, when there's more than one -, it returns 0)	
+- IF ARGC = 2 (EX : ./a.out 1)
+- "1 1" : DUPLICATE NUMBERS IN QUOTE
+- 1 01 : DUPLICATE NUMBERS WITH ZERO
 
-
-SPLIT MAIN INTO SUBFUNCTIONS 
+SPLIT MAIN INTO SUBFUNCTIONS
