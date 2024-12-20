@@ -49,6 +49,30 @@ void	ft_lstadd_back(node_t **stack, node_t *new)
 	last->next = new;
 }
 
+node_t	*create_list(int arglen, char **args)
+{
+	node_t	*stack;
+	node_t	*new_node;
+	int		i;
+	int		value;
+
+	stack = NULL;
+	i = 0;
+	while (i < arglen)
+	{
+		value = ft_atoi(args[i]);
+		new_node = ft_lstnew(value);
+		if (new_node == NULL)
+		{
+			// il faudra free split
+			exit(1);
+		}
+		ft_lstadd_back(&stack, new_node);
+		i++;
+	}
+	return (stack);
+}
+
 // Print stack for test
 void	print_stack(node_t *stack)
 {

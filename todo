@@ -6,8 +6,8 @@ ERRORS TO CHECK :
 - ARGV[] IS A NEGATIVE NUMBER ✔️
 - THERE'S MULTIPLES SIGNS (EX : --47)
 (actually, when there's more than one -, it returns 0)	
-- IF ARGC = 2 (EX : ./a.out 1)
-- "1 1" : DUPLICATE NUMBERS IN QUOTE
-- 1 01 : DUPLICATE NUMBERS WITH ZERO
+- IF ARGC = 2 (EX : ./a.out 1) (isn't a problem)
+- "1 1" : DUPLICATE NUMBERS IN QUOTE ✔️
+- 1 01 : DUPLICATE NUMBERS WITH ZERO ✔️
 
 SPLIT MAIN INTO SUBFUNCTIONS

@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:30:10 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/19 16:24:08 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/12/20 11:25:34 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct node {
 
 // UTILS.C
 int		ft_strlen(char *s);
-long long		ft_atoi(const char *nptr);
+long long	ft_atoi(const char *nptr);
 int		ft_isint(long long i);
 int		ft_isdigit(int i);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -34,11 +34,14 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		error_type(int arglen, char **args);
 int		error_duplicate(int arglen, char **args);
 int		error_check(int arglen, char **args);
-// CREATE_LIST.C
+// LISTS_UTILS.C
 node_t	*ft_lstnew(int val);
 void	ft_lstadd_front(node_t **stack, node_t *new);
 void	ft_lstadd_back(node_t **stack, node_t *new);
+node_t	*create_list(int arglen, char **args);
 void	print_stack(node_t *stack);
+// LISTS_UTILS2.C
+int		split_len(char **split);
 // SPLIT.C
 char	**split_args(char *str);
 char	**free_split(char **split, int count);

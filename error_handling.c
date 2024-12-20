@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:04:40 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/19 16:23:47 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/12/20 11:21:44 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,17 @@ int	error_duplicate(int arglen, char **args)
 	return (0);
 }
 
+int	error_check(int arglen, char **args)
+{
+	if (error_type(arglen, args) == -1)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
+	if (error_duplicate(arglen, args) == -1)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
+	return (0);
+}
