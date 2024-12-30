@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:24:44 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/20 11:25:10 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/12/30 15:24:50 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,15 @@ int	split_len(char **split)
 	while (split[i])
 		i++;
 	return (i);
+}
+
+void	free_stack(stack_t *stack)
+{
+	stack_t *temp;
+	while (stack)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
 }

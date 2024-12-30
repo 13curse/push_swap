@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:30:10 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/20 11:25:34 by sbehar           ###   ########.fr       */
+/*   Updated: 2024/12/30 16:27:25 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@
 # include <stdio.h>
 //# include "./libft/libft.h"
 
-typedef struct node {
-	int data;
-	struct node * next;
-} node_t;
+/* cc -Wall -Wextra -Werror error_handling.c instructions.c instructions2.c
+lists_utils.c lists_utils2.c split.c utils.c main.c */
+
+typedef struct stack {
+	int value;
+	struct stack * next;
+} stack_t;
 
 // UTILS.C
 int		ft_strlen(char *s);
@@ -35,17 +38,26 @@ int		error_type(int arglen, char **args);
 int		error_duplicate(int arglen, char **args);
 int		error_check(int arglen, char **args);
 // LISTS_UTILS.C
-node_t	*ft_lstnew(int val);
-void	ft_lstadd_front(node_t **stack, node_t *new);
-void	ft_lstadd_back(node_t **stack, node_t *new);
-node_t	*create_list(int arglen, char **args);
-void	print_stack(node_t *stack);
+stack_t	*ft_lstnew(int val);
+void	ft_lstadd_front(stack_t **stack, stack_t *new);
+void	ft_lstadd_back(stack_t **stack, stack_t *new);
+stack_t	*create_list(int arglen, char **args);
+void	print_stack(stack_t *stack);
+void	print_stacks(stack_t **a, stack_t **b);
 // LISTS_UTILS2.C
 int		split_len(char **split);
+void	free_stack(stack_t *stack);
 // SPLIT.C
 char	**split_args(char *str);
 char	**free_split(char **split, int count);
 int		count_args(char *str);
-
+// INSTRUCTIONS.C
+void	test_instructions(stack_t **stack_a, stack_t **stack_b);
+void	sa(stack_t **stack_a);
+void	sb(stack_t **stack_b);
+void	ss(stack_t **stack_a, stack_t **stack_b);
+void	pa(stack_t **stack_a, stack_t **stack_b);
+// INSTRUCTIONS2.C
+void	pb(stack_t **stack_a, stack_t **stack_b);
 
 #endif

@@ -12,19 +12,19 @@
 
 #include "push_swap.h"
 
-node_t	*ft_lstnew(int val)
+stack_t	*ft_lstnew(int val)
 {
-	node_t	*new_node;
+	stack_t	*new_node;
 
-	new_node = (node_t *)malloc(sizeof(node_t));
+	new_node = (stack_t *)malloc(sizeof(stack_t));
 	if (!new_node)
 		return (NULL);
-	new_node->data = val;
+	new_node->value = val;
 	new_node->next = NULL;
 	return (new_node);
 }
 
-void	ft_lstadd_front(node_t **stack, node_t *new)
+void	ft_lstadd_front(stack_t **stack, stack_t *new)
 {
 	if ((stack == NULL) |(new == NULL))
 		return ;
@@ -32,9 +32,9 @@ void	ft_lstadd_front(node_t **stack, node_t *new)
 	*stack = new;
 }
 
-void	ft_lstadd_back(node_t **stack, node_t *new)
+void	ft_lstadd_back(stack_t **stack, stack_t *new)
 {
-	node_t	*last;
+	stack_t	*last;
 
 	if (stack == NULL || new == NULL)
 		return ;
@@ -49,10 +49,10 @@ void	ft_lstadd_back(node_t **stack, node_t *new)
 	last->next = new;
 }
 
-node_t	*create_list(int arglen, char **args)
+stack_t	*create_list(int arglen, char **args)
 {
-	node_t	*stack;
-	node_t	*new_node;
+	stack_t	*stack;
+	stack_t	*new_node;
 	int		i;
 	int		value;
 
@@ -74,15 +74,37 @@ node_t	*create_list(int arglen, char **args)
 }
 
 // Print stack for test
-void	print_stack(node_t *stack)
+void	print_stack(stack_t *stack)
 {
-	node_t	*current;
+	stack_t	*current;
 
 	current = stack;
 	while (current != NULL)
 	{
-		printf("%d -> ", current->data);
+		printf("%d -> ", current->value);
 		current = current->next;
 	}
 	printf("NULL\n");
+}
+
+void	print_stacks(stack_t **a, stack_t **b)
+{
+	stack_t	*temp_a;
+	stack_t	*temp_b;
+
+	temp_a = *a;
+	temp_b = *b;
+	printf("Stack A: ");
+	while (temp_a)
+	{
+		printf("%d ", temp_a->value);
+		temp_a = temp_a->next;
+	}
+	printf("\nStack B: ");
+	while (temp_b)
+	{
+		printf("%d ", temp_b->value);
+		temp_b = temp_b->next;
+	}
+	printf("\n\n");
 }
