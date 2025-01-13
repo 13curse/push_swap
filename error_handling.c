@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:04:40 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/20 11:21:44 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/13 16:43:48 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	error_type(int arglen, char **args)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (i < arglen)
@@ -37,7 +37,6 @@ int	error_type(int arglen, char **args)
 	}
 	return (0);
 }
-
 
 int	error_duplicate(int arglen, char **args)
 {

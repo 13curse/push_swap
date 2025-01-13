@@ -12,31 +12,31 @@
 
 #include "push_swap.h"
 
-void	sa(stack_t **stack_a)
+void	sa(t_stack **stack_a)
 {
 	int	temp;
 
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
-		return;
-	temp = (*stack_a)->value;	
+		return ;
+	temp = (*stack_a)->value;
 	(*stack_a)->value = (*stack_a)->next->value;
 	(*stack_a)->next->value = temp;
 	write(1, "sa\n", 3);
 }
 
-void	sb(stack_t **stack_b)
+void	sb(t_stack **stack_b)
 {
 	int	temp;
 
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
-		return;
+		return ;
 	temp = (*stack_b)->value;
 	(*stack_b)->value = (*stack_b)->next->value;
 	(*stack_b)->next->value = temp;
 	write(1, "sb\n", 3);
 }
 
-void	ss(stack_t **stack_a, stack_t **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	int	temp_a;
 	int	temp_b;
@@ -56,9 +56,9 @@ void	ss(stack_t **stack_a, stack_t **stack_b)
 	write(1, "ss\n", 3);
 }
 
-void	pa(stack_t **stack_a, stack_t **stack_b)
+void	pa(t_stack **stack_a, t_stack **stack_b)
 {
-	stack_t	*temp;
+	t_stack	*temp;
 
 	if (*stack_b == NULL)
 		return ;
@@ -68,9 +68,10 @@ void	pa(stack_t **stack_a, stack_t **stack_b)
 	*stack_a = temp;
 	write(1, "pa\n", 3);
 }
-void	pb(stack_t **stack_a, stack_t **stack_b)
+
+void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	stack_t	*temp;
+	t_stack	*temp;
 
 	if (*stack_a == NULL)
 		return ;
@@ -80,4 +81,3 @@ void	pb(stack_t **stack_a, stack_t **stack_b)
 	*stack_b = temp;
 	write(1, "pb\n", 3);
 }
-

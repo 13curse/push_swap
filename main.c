@@ -6,21 +6,19 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:14:52 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/13 12:02:14 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/13 16:52:04 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-stack_t		*stack_a = NULL;
-stack_t		*stack_b = NULL;
-stack_t		**head_a = &stack_a;
-stack_t		**head_b = &stack_b;
+// t_stack		*stack_a = NULL;
+// t_stack		*stack_b = NULL;
 
 int	main(int argc, char **argv)
 {
-	// stack_t		*stack_a;
-	// stack_t		*stack_b = NULL;
+	t_stack		*stack_a;
+	t_stack		*stack_b = NULL;
 	char		**split;
 
 	if (argc == 1)

@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:02:50 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/19 14:31:23 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/13 16:48:36 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_strlen(char *s)
 
 long long	ft_atoi(const char *nptr)
 {
-	int	i;
+	int		i;
 	long	result;
 	long	sign;
 

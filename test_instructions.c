@@ -6,13 +6,13 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:08:25 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/13 16:14:18 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/13 16:52:04 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	test_instructions(stack_t **stack_a, stack_t **stack_b)
+void	test_instructions(t_stack **stack_a, t_stack **stack_b)
 {
 	sa(stack_a);
 	printf("After sa:\n");

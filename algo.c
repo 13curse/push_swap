@@ -6,13 +6,13 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:13:50 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/13 11:16:54 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/13 16:52:06 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	quicksort(stack_t *stack)
+// void	quicksort(t_stack *stack)
 // {
 // 	if (ft_strlen((char *)stack) <= 1)
 // 		return (stack);

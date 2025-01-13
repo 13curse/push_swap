@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:13:09 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/19 13:44:31 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/13 16:49:11 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	is_sep(char c)
 {
-	return (c  == ' ' || c == '	');
+	return (c == ' ' || c == '	');
 }
 
 int	count_args(char *str)
@@ -28,7 +28,7 @@ int	count_args(char *str)
 	{
 		if (!is_sep(*str) && !in_arg)
 		{
-			in_arg  = 1;
+			in_arg = 1;
 			count++;
 		}
 		else if (is_sep(*str))

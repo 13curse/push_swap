@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	ra(stack_t **stack_a)
+void	ra(t_stack **stack_a)
 {
-	stack_t	*temp;
-	stack_t	*last;
+	t_stack	*temp;
+	t_stack	*last;
 
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
@@ -29,10 +29,10 @@ void	ra(stack_t **stack_a)
 	write(1, "ra\n", 3);
 }
 
-void	rb(stack_t **stack_b)
+void	rb(t_stack **stack_b)
 {
-	stack_t	*temp;
-	stack_t	*last;
+	t_stack	*temp;
+	t_stack	*last;
 
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
@@ -46,12 +46,12 @@ void	rb(stack_t **stack_b)
 	write(1, "rb\n", 3);
 }
 
-void	rr(stack_t	**stack_a, stack_t **stack_b)
+void	rr(t_stack	**stack_a, t_stack **stack_b)
 {
-	stack_t	*temp_a;
-	stack_t	*temp_b;
-	stack_t	*last_a;
-	stack_t	*last_b;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
+	t_stack	*last_a;
+	t_stack	*last_b;
 
 	if (*stack_a && (*stack_a)->next && *stack_b && (*stack_b)->next)
 	{
@@ -62,7 +62,6 @@ void	rr(stack_t	**stack_a, stack_t **stack_b)
 			last_a = last_a->next;
 		last_a->next = temp_a;
 		temp_a->next = NULL;
-
 		temp_b = *stack_b;
 		*stack_b = (*stack_b)->next;
 		last_b = *stack_b;
@@ -73,10 +72,11 @@ void	rr(stack_t	**stack_a, stack_t **stack_b)
 	}
 	write(1, "rr\n", 3);
 }
-void	rra(stack_t **stack_a)
+
+void	rra(t_stack **stack_a)
 {
-	stack_t	*last;
-	stack_t	*second_last;
+	t_stack	*last;
+	t_stack	*second_last;
 
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
@@ -93,10 +93,10 @@ void	rra(stack_t **stack_a)
 	write(1, "rra\n", 4);
 }
 
-void	rrb(stack_t **stack_b)
+void	rrb(t_stack **stack_b)
 {
-	stack_t	*last;
-	stack_t	*second_last;
+	t_stack	*last;
+	t_stack	*second_last;
 
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;

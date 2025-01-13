@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-stack_t	*ft_lstnew(int val)
+t_stack	*ft_lstnew(int val)
 {
-	stack_t	*new_node;
+	t_stack	*new_node;
 
-	new_node = (stack_t *)malloc(sizeof(stack_t));
+	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		return (NULL);
 	new_node->value = val;
@@ -24,7 +24,7 @@ stack_t	*ft_lstnew(int val)
 	return (new_node);
 }
 
-void	ft_lstadd_front(stack_t **stack, stack_t *new)
+void	ft_lstadd_front(t_stack **stack, t_stack *new)
 {
 	if ((stack == NULL) |(new == NULL))
 		return ;
@@ -32,9 +32,9 @@ void	ft_lstadd_front(stack_t **stack, stack_t *new)
 	*stack = new;
 }
 
-void	ft_lstadd_back(stack_t **stack, stack_t *new)
+void	ft_lstadd_back(t_stack **stack, t_stack *new)
 {
-	stack_t	*last;
+	t_stack	*last;
 
 	if (stack == NULL || new == NULL)
 		return ;
@@ -49,10 +49,10 @@ void	ft_lstadd_back(stack_t **stack, stack_t *new)
 	last->next = new;
 }
 
-stack_t	*create_list(int arglen, char **args)
+t_stack	*create_list(int arglen, char **args)
 {
-	stack_t	*stack;
-	stack_t	*new_node;
+	t_stack	*stack;
+	t_stack	*new_node;
 	int		i;
 	int		value;
 
@@ -74,9 +74,9 @@ stack_t	*create_list(int arglen, char **args)
 }
 
 // Print stack for test
-void	print_stack(stack_t *stack)
+void	print_stack(t_stack *stack)
 {
-	stack_t	*current;
+	t_stack	*current;
 
 	current = stack;
 	while (current != NULL)
@@ -87,10 +87,10 @@ void	print_stack(stack_t *stack)
 	printf("NULL\n");
 }
 
-void	print_stacks(stack_t **a, stack_t **b)
+void	print_stacks(t_stack **a, t_stack **b)
 {
-	stack_t	*temp_a;
-	stack_t	*temp_b;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
 
 	temp_a = *a;
 	temp_b = *b;

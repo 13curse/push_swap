@@ -6,18 +6,18 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:55:16 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/13 16:38:10 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/13 16:52:02 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	rrr(stack_t **stack_a, stack_t **stack_b)
+// void	rrr(t_stack **stack_a, t_stack **stack_b)
 // {
-// 	stack_t	*last_a;
-// 	stack_t	*second_last_a;
-// 	stack_t	*last_b;
-// 	stack_t	*second_last_b;
+// 	t_stack	*last_a;
+// 	t_stack	*second_last_a;
+// 	t_stack	*last_b;
+// 	t_stack	*second_last_b;
 
 // 	if (*stack_a && (*stack_a)->next)
 // 	{
@@ -48,7 +48,7 @@
 // 	write(1, "rrr\n", 4);
 // }
 
-void	rrr(stack_t **stack_a, stack_t **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	if (*stack_a && (*stack_a)->next)
 		rra(stack_a);
