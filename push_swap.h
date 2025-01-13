@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:30:10 by sbehar            #+#    #+#             */
-/*   Updated: 2024/12/30 16:27:25 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/13 16:03:37 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,20 @@ char	**split_args(char *str);
 char	**free_split(char **split, int count);
 int		count_args(char *str);
 // INSTRUCTIONS.C
-void	test_instructions(stack_t **stack_a, stack_t **stack_b);
 void	sa(stack_t **stack_a);
 void	sb(stack_t **stack_b);
 void	ss(stack_t **stack_a, stack_t **stack_b);
 void	pa(stack_t **stack_a, stack_t **stack_b);
-// INSTRUCTIONS2.C
 void	pb(stack_t **stack_a, stack_t **stack_b);
+// INSTRUCTIONS2.C
+void	ra(stack_t **stack_a);
+void	rb(stack_t **stack_b);
+void	rr(stack_t	**stack_a, stack_t **stack_b);
+void	rra(stack_t **stack_a);
+void	rrb(stack_t **stack_b);
+// INSTRUCTIONS3.C
+void	rrr(stack_t **stack_a, stack_t **stack_b);
+// TEST_INSTRUCTIONS.C
+void	test_instructions(stack_t **stack_a, stack_t **stack_b);
 
 #endif
