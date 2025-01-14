@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lists_utils2.c                                     :+:      :+:    :+:   */
+/*   stack_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:24:44 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/13 16:52:03 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/14 15:48:53 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,22 @@ void	free_stack(t_stack *stack)
 		stack = stack->next;
 		free(temp);
 	}
+}
+
+int	stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	while(stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
+}
+
+bool	stack_is_empty(t_stack *stack)
+{
+	return (stack == NULL);
 }

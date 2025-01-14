@@ -6,8 +6,8 @@ CFLAGS = -Wall -Wextra -Werror
 # -fsanitize=address -g3
 
 SRCS = algo.c error_handling.c instructions.c instructions2.c \
-       lists_utils.c lists_utils2.c main.c split.c utils.c \
-	   test_instructions.c instructions3.c\
+       stack_utils.c stack_utils2.c main.c split.c utils.c \
+	   test_instructions.c instructions3.c check_if_sort.c\
 
 OBJS = $(SRCS:.c=.o)
 

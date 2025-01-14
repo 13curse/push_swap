@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 15:08:25 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/13 16:52:04 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/14 15:43:40 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@ void	test_instructions(t_stack **stack_a, t_stack **stack_b)
 
 	pa(stack_a, stack_b);
 	printf("After pa:\n");
-	print_stacks(stack_a, stack_b);
-
-	pb(stack_a, stack_b);
-	printf("After pb:\n");
-	print_stacks(stack_a, stack_b);
-
-	pb(stack_a, stack_b);
-	printf("After pb:\n");
 	print_stacks(stack_a, stack_b);
 
 	pb(stack_a, stack_b);

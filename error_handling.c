@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:04:40 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/13 16:43:48 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/14 15:44:37 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,33 @@ int	error_check(int arglen, char **args)
 		return (1);
 	}
 	return (0);
+}
+t_stack	*one_arg_handle(char *arg)
+{
+	char	**split;
+	int		len;
+	t_stack	*stack;
+
+	split = split_args(arg);
+	if (!split)
+		return (NULL);
+	len =  split_len(split);
+	if (error_check(len, split))
+	{
+		free_split(split, len);
+		return (NULL);
+	}
+	stack = create_stack(len, split);
+	free_split(split, len);
+	return (stack);
+}
+
+t_stack	*multiple_args_handle(int argc, char **argv)
+{
+	t_stack	*stack;
+
+	if (error_check(argc - 1, argv + 1))
+		return (NULL);
+	stack = create_stack(argc - 1, argv + 1);
+	return (stack);
 }

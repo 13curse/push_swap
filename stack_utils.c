@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack	*ft_lstnew(int val)
+t_stack	*ft_stacknew(int val)
 {
 	t_stack	*new_node;
 
@@ -24,7 +24,7 @@ t_stack	*ft_lstnew(int val)
 	return (new_node);
 }
 
-void	ft_lstadd_front(t_stack **stack, t_stack *new)
+void	ft_stackadd_front(t_stack **stack, t_stack *new)
 {
 	if ((stack == NULL) |(new == NULL))
 		return ;
@@ -32,7 +32,7 @@ void	ft_lstadd_front(t_stack **stack, t_stack *new)
 	*stack = new;
 }
 
-void	ft_lstadd_back(t_stack **stack, t_stack *new)
+void	ft_stackadd_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*last;
 
@@ -49,7 +49,7 @@ void	ft_lstadd_back(t_stack **stack, t_stack *new)
 	last->next = new;
 }
 
-t_stack	*create_list(int arglen, char **args)
+t_stack	*create_stack(int arglen, char **args)
 {
 	t_stack	*stack;
 	t_stack	*new_node;
@@ -61,13 +61,13 @@ t_stack	*create_list(int arglen, char **args)
 	while (i < arglen)
 	{
 		value = ft_atoi(args[i]);
-		new_node = ft_lstnew(value);
+		new_node = ft_stacknew(value);
 		if (new_node == NULL)
 		{
 			// il faudra free split
 			exit(1);
 		}
-		ft_lstadd_back(&stack, new_node);
+		ft_stackadd_back(&stack, new_node);
 		i++;
 	}
 	return (stack);
