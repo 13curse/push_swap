@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ra(t_stack **stack_a)
+void	ra(t_stack **stack_a, bool print)
 {
 	t_stack	*temp;
 	t_stack	*last;
@@ -26,10 +26,11 @@ void	ra(t_stack **stack_a)
 		last = last->next;
 	last->next = temp;
 	temp->next = NULL;
-	write(1, "ra\n", 3);
+	if (print)
+		write(1, "ra\n", 3);
 }
 
-void	rb(t_stack **stack_b)
+void	rb(t_stack **stack_b, bool print)
 {
 	t_stack	*temp;
 	t_stack	*last;
@@ -43,10 +44,11 @@ void	rb(t_stack **stack_b)
 		last = last->next;
 	last->next = temp;
 	temp->next = NULL;
-	write(1, "rb\n", 3);
+	if (print)
+		write(1, "rb\n", 3);
 }
 
-void	rr(t_stack	**stack_a, t_stack **stack_b)
+void	rr(t_stack	**stack_a, t_stack **stack_b, bool print)
 {
 	t_stack	*temp_a;
 	t_stack	*temp_b;
@@ -70,10 +72,11 @@ void	rr(t_stack	**stack_a, t_stack **stack_b)
 		last_b->next = temp_b;
 		temp_b->next = NULL;
 	}
-	write(1, "rr\n", 3);
+	if (print)
+		write(1, "rr\n", 3);
 }
 
-void	rra(t_stack **stack_a)
+void	rra(t_stack **stack_a, bool print)
 {
 	t_stack	*last;
 	t_stack	*second_last;
@@ -90,10 +93,11 @@ void	rra(t_stack **stack_a)
 	last->next = *stack_a;
 	*stack_a = last;
 	second_last->next = NULL;
-	write(1, "rra\n", 4);
+	if (print)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack **stack_b)
+void	rrb(t_stack **stack_b, bool print)
 {
 	t_stack	*last;
 	t_stack	*second_last;
@@ -110,5 +114,6 @@ void	rrb(t_stack **stack_b)
 	last->next = *stack_b;
 	*stack_b = last;
 	second_last->next = NULL;
-	write(1, "rrb\n", 4);
+	if (print)
+		write(1, "rrb\n", 4);
 }

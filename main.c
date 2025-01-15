@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:14:52 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/14 14:12:48 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/15 15:51:16 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
+	t_stack	*stack_a = NULL;
 	t_stack	*stack_b = NULL;
 
 	if (argc == 1)
@@ -28,10 +28,18 @@ int	main(int argc, char **argv)
 	if (stack_a_is_sorted(stack_a))
 	{
 		printf("Stack A is already sorted\n");
-		free_stack(stack_a);
 		return (0);
 	}
+	if (!stack_a_is_sorted(stack_a))
+	{
+		if (stack_size(stack_a) == 2)
+			sa(&stack_a, false);
+		// si stack_size(stack_a) == 3 -> sort_three
+		// sinon algo turk
+	}
 	test_instructions(&stack_a, &stack_b);
+	// free_stack(stack_a);
+	print_stack(stack_a);
 	return (0);
 }
 

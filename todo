@@ -11,7 +11,11 @@ ERRORS TO CHECK :
 - 1 01 : DUPLICATE NUMBERS WITH ZERO ✔️
 
 • SPLIT MAIN INTO SUBFUNCTIONS ✔️
-• RRR WRITING RRA AND RRB TO FIX
+• RRR WRITING RRA AND RRB TO FIX ✔️
+	↳ corrected with bool print addition
 • NORM ERRORS AND VALGRIND TO CHECK
 
-ctrl shift f to select all and then replace
+"ctrl shift f to select all and then replace"
+
+• do sort_three_numb_stacks when there's 3 numbers left in stack_a
+• do the main algorithm

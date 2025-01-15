@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:30:10 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/14 15:49:24 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/15 16:22:27 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdio.h>
+# include <stdbool.h>
 //# include "./libft/libft.h"
 
 /* cc -Wall -Wextra -Werror error_handling.c instructions.c instructions2.c
@@ -25,7 +26,13 @@ lists_utils.c lists_utils2.c split.c utils.c main.c */
 typedef struct stack
 {
 	int				value;
+	int				index;
+	// int				push_cost;
+	// bool			above_median;
+	// bool			cheapest;
 	struct stack	*next;
+	// struct stack	*prev;
+	// struct stack	*target_node;
 }	t_stack;
 
 // UTILS.C
@@ -57,22 +64,22 @@ char		**split_args(char *str);
 char		**free_split(char **split, int count);
 int			count_args(char *str);
 // INSTRUCTIONS.C
-void		sa(t_stack **stack_a);
-void		sb(t_stack **stack_b);
-void		ss(t_stack **stack_a, t_stack **stack_b);
-void		pa(t_stack **stack_a, t_stack **stack_b);
-void		pb(t_stack **stack_a, t_stack **stack_b);
+void		sa(t_stack **stack_a, bool print);
+void		sb(t_stack **stack_b, bool print);
+void		ss(t_stack **stack_a, t_stack **stack_b, bool print);
+void		pa(t_stack **stack_a, t_stack **stack_b, bool print);
+void		pb(t_stack **stack_a, t_stack **stack_b, bool print);
 // INSTRUCTIONS2.C
-void		ra(t_stack **stack_a);
-void		rb(t_stack **stack_b);
-void		rr(t_stack	**stack_a, t_stack **stack_b);
-void		rra(t_stack **stack_a);
-void		rrb(t_stack **stack_b);
+void		ra(t_stack **stack_a, bool print);
+void		rb(t_stack **stack_b, bool print);
+void		rr(t_stack	**stack_a, t_stack **stack_b, bool print);
+void		rra(t_stack **stack_a, bool print);
+void		rrb(t_stack **stack_b,bool print);
 // INSTRUCTIONS3.C
-void		rrr(t_stack **stack_a, t_stack **stack_b);
+void		rrr(t_stack **stack_a, t_stack **stack_b, bool print);
 // TEST_INSTRUCTIONS.C
 void		test_instructions(t_stack **stack_a, t_stack **stack_b);
 // CHECK_IF_SORT.C
-int			stack_a_is_sorted(t_stack *stack_a);
+bool		stack_a_is_sorted(t_stack *stack_a);
 
 #endif

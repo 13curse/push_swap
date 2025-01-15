@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	stack_a_is_sorted(t_stack *stack_a)
+bool	stack_a_is_sorted(t_stack *stack_a)
 {
 	t_stack	*current;
 
@@ -20,8 +20,8 @@ int	stack_a_is_sorted(t_stack *stack_a)
 	while (current && current->next)
 	{
 		if (current->value > current->next->value)
-			return (0);
+			return (false);
 		current = current->next;
 	}
-	return (1);
+	return (true);
 }
