@@ -18,4 +18,5 @@ ERRORS TO CHECK :
 "ctrl shift f to select all and then replace"
 
 • do sort_three_numb_stacks when there's 3 numbers left in stack_a
-• do the main algorithm
+• do the main algorithm 🔄​
+• reduce lines of find_target_node

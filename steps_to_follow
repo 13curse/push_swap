@@ -1,0 +1,22 @@
+Etapes à suivre pour l'implémentation de l'algorithme : 
+
+- 1/ Push B (pb) les deux premiers noeuds de la stack A vers la stack B, sans vérification aupréalable. Ces deux noeuds deviendront les noeuds cibles pour les valeurs restantes dans la stack A. La plus petite valeur entre les deux noeuds sera appelée ici Noeud Cible MIN tandis que la plus grande valeur sera appelée ici Noeud Cible MAX.
+
+- 2/ Calcul du noeud cible pour chaque valeur de la stack A. Ici le noeud cible est la valeur inférieur la plus proche de mon noeud de base. Si le noeud ne possède AUCUNE valeur inférieur (il est lui même la plus petite valeur), on retourne le noeud cible MAX.
+
+- 3/ Une fois le noeud cible de chaque valeur restante dans la stack A, on détermine le noeud le moins coûteux à envoyer vers B. Ici on appelera le côut de chaque noeud le Push Cost. Afin de le calculer, on effectue l'opération suivante : Nombre d'opérations pour mettre le noeud actuel au sommet de la stack A + Nombre d'opérations pour mettre le noeud cible du noeud actuel au sommet de la stack B.
+
+- 4/ On envoie dans la stack B le noeud ayant le Push Cost le plus petit puis on recalcule les noeuds cibles des valeurs restantes de la stack A en prenant nos trois valeurs de la stack B en noeuds cibles. On recalcule le Push Cost des valeurs restantes dans la stack A et on envoie celle avec le plus petit Push Cost dans la stack B.
+
+- 5/ On répète l'opération jusqu'à ce que la stack A ne contienne plus que 3 noeuds. Dès lors, on va venir utiliser une fonction qui trie une stack de 3 noeuds (on l'appelera sort_three). Cette fonction mettra le plus grand nombre de la stack en bas et effectuera un Swap A (sa) si nécessaire.
+
+- 6/ Une fois la stack A de trois noeuds triée, on va venir renvoyer les noeuds mis dans la stack B vers la stack A. Dans le même principe qu'auparavant on va venir calculer les noeuds cibles (noeuds actuels de la stack A) des valeurs de la stack B. Dans ce cas, les noeuds cibles sont le nombre supérieur le plus proche à la valeur de mon noeud actuel. Si la valeur de mon noeud actuel est déjà la valeur la plus grande de la stack, on renvoie juste le noeud cible MIN.
+
+- 7/ On renvoie maintenant les noeuds de la stack B vers la stack A en partant du sommet. La position du noeud cible de mon noeud actuel est importante : 
+- Si le noeud cible est au sommet de la stack A, je me contente juste de Push B mon noeud actuel.
+- Si le noeud cible n'est pas au sommet de la stack A, alors je vais devoir ra() ou rra() afin de mettre le noeud cible au sommet de la stack. Pour déterminer quelle opération je dois choisir, je viens établir la médiane entre les noeuds de la stack A. Si la valeur est au DESSUS de la médiane, j'effectue un ra(). Si la valeur est en DESSOUS de la médiane, j'effectue un rra().
+
+- 8/ Une fois la stack B vide, je vais venir mettre le plus petit noeud au sommet en suivant la règle de la médiane énoncée plus tôt pour déterminer quelle opération choisir.
+
+La stack A est donc maintenant triée avec un ordre croissant !
+
