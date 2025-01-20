@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:14:52 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/16 12:15:25 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/20 16:49:49 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,22 @@ int	main(int argc, char **argv)
 	{
 		if (stack_size(stack_a) == 2)
 			sa(&stack_a, false);
-		// si stack_size(stack_a) == 3 -> sort_three
-		// sinon algo turk
+		else if (stack_size(stack_a) == 3)
+		{
+			print_stacks(&stack_a, &stack_b);
+			sort_three(&stack_a);
+			print_stacks(&stack_a, &stack_b);
+		}
+		else
+		{
+			print_stacks(&stack_a, &stack_b);
+			turk_algorithm(&stack_a, &stack_b);
+			print_stacks(&stack_a, &stack_b);
+		}
 	}
-	test_instructions(&stack_a, &stack_b);
-	// print_stack(stack_a);
-	// free_stack(stack_a);
+	print_stacks(&stack_a, &stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }
 

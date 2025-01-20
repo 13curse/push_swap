@@ -4,7 +4,7 @@ Etapes à suivre pour l'implémentation de l'algorithme :
 
 - 2/ Calcul du noeud cible pour chaque valeur de la stack A. Ici le noeud cible est la valeur inférieur la plus proche de mon noeud de base. Si le noeud ne possède AUCUNE valeur inférieur (il est lui même la plus petite valeur), on retourne le noeud cible MAX.
 
-- 3/ Une fois le noeud cible de chaque valeur restante dans la stack A, on détermine le noeud le moins coûteux à envoyer vers B. Ici on appelera le côut de chaque noeud le Push Cost. Afin de le calculer, on effectue l'opération suivante : Nombre d'opérations pour mettre le noeud actuel au sommet de la stack A + Nombre d'opérations pour mettre le noeud cible du noeud actuel au sommet de la stack B.
+- 3/ Une fois le noeud cible de chaque valeur restante dans la stack A trouvé, on détermine le noeud le moins coûteux à envoyer vers B. Ici on appelera le coût de chaque noeud le Push Cost. Afin de le calculer, on effectue l'opération suivante : Nombre d'opérations pour mettre le noeud actuel au sommet de la stack A + Nombre d'opérations pour mettre le noeud cible du noeud actuel au sommet de la stack B.
 
 - 4/ On envoie dans la stack B le noeud ayant le Push Cost le plus petit puis on recalcule les noeuds cibles des valeurs restantes de la stack A en prenant nos trois valeurs de la stack B en noeuds cibles. On recalcule le Push Cost des valeurs restantes dans la stack A et on envoie celle avec le plus petit Push Cost dans la stack B.
 

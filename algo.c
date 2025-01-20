@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 11:13:50 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/16 23:09:03 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/20 16:45:55 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,48 @@ int	push_cost(int pos_a, int pos_b, int size_a, int size_b)
 	return (cost_a + cost_b + 1); // +1 = pb pour déplacer le noeud de A vers B
 }
 
+t_stack	*find_least_cost_node(t_stack *s_a, t_stack *s_b)
+{
+	int		min_cost;
+	t_stack	*target_node = NULL;
+	t_stack	*current_a;
+	int		pos_a;
+	int		cost;
+	int		opt_pos;
+
+	min_cost = INT_MAX;
+	current_a = s_a;
+	pos_a = 0;
+	while (current_a)
+	{
+		opt_pos = get_position(s_b, find_target_node(current_a, s_b));
+		cost = push_cost(pos_a, opt_pos, stack_size(s_a), stack_size(s_b));
+		if (cost < min_cost)
+		{
+			min_cost = cost;
+			target_node = current_a;
+		}
+		pos_a++;
+		current_a = current_a->next;
+	}
+	return (target_node);
+}
+
+void	push_least_cost_node(t_stack **s_a, t_stack **s_b)
+{
+	t_stack	*target_node;
+
+	target_node = find_least_cost_node(*s_a, *s_b);
+	if (target_node)
+	{
+		while (*s_a != target_node)
+			ra(s_a, true);
+		pb(s_a, s_b, true);
+	}
+}
+
+
+
 // void push(t_stack **stack, int value) {
 //     t_stack *new_node = ft_stacknew(value);
 //     new_node->next = *stack;
@@ -112,7 +154,7 @@ int	push_cost(int pos_a, int pos_b, int size_a, int size_b)
 
 //     push(&stack_b, 10);
 //     push(&stack_b, 26);
-//     push(&stack_b, 85);
+//     push(&stack_b, 80);
 
 //     t_stack *current_a = stack_a;
 

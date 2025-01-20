@@ -8,6 +8,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = algo.c error_handling.c instructions.c instructions2.c \
        stack_utils.c stack_utils2.c main.c split.c utils.c \
 	   test_instructions.c instructions3.c check_if_sort.c\
+	   algo2.c algo3.c\
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: sbehar <sbehar@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 11:30:10 by sbehar            #+#    #+#             */
-/*   Updated: 2025/01/15 16:22:27 by sbehar           ###   ########.fr       */
+/*   Updated: 2025/01/20 16:44:25 by sbehar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,20 @@ void		rrr(t_stack **stack_a, t_stack **stack_b, bool print);
 void		test_instructions(t_stack **stack_a, t_stack **stack_b);
 // CHECK_IF_SORT.C
 bool		stack_a_is_sorted(t_stack *stack_a);
+// ALGO.C
+void		push_first_two_nodes(t_stack **stack_a, t_stack **stack_b, int *max_value, int *min_value);
+t_stack		*find_target_node(t_stack *stack_a, t_stack *stack_b);
+int			push_cost(int pos_a, int pos_b, int size_a, int size_b);
+t_stack		*find_least_cost_node(t_stack *s_a, t_stack *s_b);
+void		push_least_cost_node(t_stack **s_a, t_stack **s_b);
+// ALGO2.C
+void		turk_algorithm(t_stack **stack_a, t_stack **stack_b);
+void		sort_three(t_stack **stack);
+t_stack		*find_target_stack_a(t_stack *stack_a, int value);
+int			get_position(t_stack *stack, t_stack *node);
+void		push_back_stack_a(t_stack **stack_a, t_stack **stack_b);
+// ALGO3.C
+t_stack		*find_smallest(t_stack *stack);
+void		put_smallest_top(t_stack **stack_a);
 
 #endif
